@@ -1,0 +1,48 @@
+ul{
+    margin: auto;
+    width: 50%;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 5%; 
+}
+
+nav ul li a {
+    text-decoration: none;
+    margin: 5%;
+    color: chocolate;
+    font: 1.3rem;
+}
+
+nav ul li a:hover, .dropdown-items a:hover {
+    text-decoration: visible;
+    background-color: lightgoldenrodyellow;
+}
+
+.dropdown li {
+    display: block;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+li a, .dropbtn{
+    display: inline-block;
+}
+
+.dropdown-items {
+    display: none;
+    position: absolute;
+}
+
+.dropdown-items a {
+    display: block;
+    text-align: left;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-items{
+    display: block;
+}
