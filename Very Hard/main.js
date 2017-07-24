@@ -16,9 +16,6 @@ function compare(a, b){
     if(lastNameA < lastNameB) return -1;
     if(lastNameA > lastNameB) return 1;
 }
-//Add Span Tags to the Last Name
-lastNameA = "<span>" + lastNameA + "</span>";
-lastNameB = "<span>" + lastNameB + "</span>";
 
 //Sorting the Alphabetized Names in the Compare function 
 arrayValues.sort(compare);
@@ -26,11 +23,23 @@ console.log(arrayValues);
 
 //Turning the array items into list item
 var listItems = [];
+
+//Mapping over each alphabetized name to HTML tags to the names for DOM manipulation
 arrayValues.map(function(element) {
-    var listItem = "<li>" + element + "</li>";
+    
+    //Add Span Tags to the Last Name
+    var listItem = element.split(" ");
+    var lastName = listItem.pop();
+    var firstName = listItem[listItem.length-1];
+    console.log(lastName);
+    
+    //Concating the first and last names with the span tags on the last name
+    lastName = "<span>" + lastName + "</span>";
+    listItem = "<li>" + firstName + " " + lastName + "</li>";
     listItems.push(listItem);
 });
+
 console.log(listItems);
 
 //Inserting the Alphabetized Names into the DOM as an Ordered List
-document.getElementById('nameList').innerHTML = listItems;
+document.getElementById('nameList').innerHTML = listItems.join(' ');
